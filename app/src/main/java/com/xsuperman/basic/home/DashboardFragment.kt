@@ -7,6 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.xsuperman.basic.R
+import com.xsuperman.basic.db.objectbox.AppAccount
+import com.xsuperman.basic.db.objectbox.appAccountStore
+import kotlinx.android.synthetic.main.home_dashboard_fragment.*
+import timber.log.Timber
 
 class DashboardFragment : Fragment() {
 
@@ -26,6 +30,11 @@ class DashboardFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(DashboardViewModel::class.java)
+
+        val testAccount = AppAccount(userId = "userA", password = "pww")
+        appAccountStore.put(testAccount)
+        Timber.d(testAccount.toString())
+        hello.text = testAccount.toString()
         // TODO: Use the ViewModel
     }
 

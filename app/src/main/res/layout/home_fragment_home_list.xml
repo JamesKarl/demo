@@ -11,4 +11,5 @@
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
         tools:context=".home.HomeFragment"
-        tools:listitem="@layout/home_fragment_home"/>
+        tools:itemCount="8"
+        tools:listitem="@layout/recycler_view_item"/>
