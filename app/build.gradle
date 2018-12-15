@@ -41,12 +41,12 @@ dependencies {
     implementation 'androidx.sqlite:sqlite-ktx:2.0.0'
     implementation 'androidx.collection:collection-ktx:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-reactivestreams-ktx:2.0.0'
-    implementation 'android.arch.navigation:navigation-common-ktx:1.0.0-alpha07'
-    implementation 'android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha07'
-    implementation 'android.arch.navigation:navigation-runtime-ktx:1.0.0-alpha07'
+    implementation 'android.arch.navigation:navigation-common-ktx:1.0.0-alpha08'
+    implementation 'android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha08'
+    implementation 'android.arch.navigation:navigation-runtime-ktx:1.0.0-alpha08'
     //implementation 'android.arch.navigation:navigation-testing-ktx:1.0.0-alpha07'
-    implementation 'android.arch.navigation:navigation-ui-ktx:1.0.0-alpha07'
-    implementation 'android.arch.work:work-runtime-ktx:1.0.0-alpha11'
+    implementation 'android.arch.navigation:navigation-ui-ktx:1.0.0-alpha08'
+    implementation 'android.arch.work:work-runtime-ktx:1.0.0-alpha13'
 
     def lifecycle_version = "2.0.0"
     // ViewModel and LiveData
@@ -75,30 +75,30 @@ dependencies {
     //implementation 'androidx.navigation:navigation-ui:0.1.1'
     //implementation "androidx.concurrent:concurrent-futures:0.0.1"
 
-    def paging_version = "2.1.0-beta01"
+    def paging_version = "2.1.0-rc01"
     implementation "androidx.paging:paging-runtime:$paging_version" // use -ktx for Kotlin
     // alternatively - without Android dependencies for testing
     testImplementation "androidx.paging:paging-common:$paging_version" // use -ktx for Kotlin
     // optional - RxJava support
     implementation "androidx.paging:paging-rxjava2:$paging_version" // use -ktx for Kotlin
 
-    def nav_version = "1.0.0-alpha07"
+    def nav_version = "1.0.0-alpha08"
     implementation "android.arch.navigation:navigation-fragment:$nav_version" // use -ktx for Kotlin
     implementation "android.arch.navigation:navigation-ui:$nav_version" // use -ktx for Kotlin
     // optional - Test helpers
     // this library depends on the Kotlin standard library
     androidTestImplementation "android.arch.navigation:navigation-testing:$nav_version"
 
-    def work_version = "1.0.0-alpha11"
+    def work_version = "1.0.0-alpha13"
     implementation "android.arch.work:work-runtime:$work_version" // use -ktx for Kotlin
     // optional - Firebase JobDispatcher support
-    implementation "android.arch.work:work-firebase:$work_version"
+    //implementation "android.arch.work:work-firebase:$work_version"
     // optional - Test helpers
     androidTestImplementation "android.arch.work:work-testing:$work_version"
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
