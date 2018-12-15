@@ -10,6 +10,6 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
-        tools:context=".home.HomeFragment"
+        tools:context=".home.home.HomeFragment"
         tools:itemCount="8"
         tools:listitem="@layout/recycler_view_item"/>

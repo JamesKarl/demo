@@ -1,4 +1,4 @@
-package com.xsuperman.basic.home
+package com.xsuperman.basic.home.home
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

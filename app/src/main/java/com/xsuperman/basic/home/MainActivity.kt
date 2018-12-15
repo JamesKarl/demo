@@ -1,10 +1,11 @@
-package com.xsuperman.basic
+package com.xsuperman.basic.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
+import com.xsuperman.basic.R
 import com.xsuperman.basic.common.ViewPagerListener
-import com.xsuperman.basic.home.HomePagerAdapter
+import com.xsuperman.basic.home.home.HomePagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

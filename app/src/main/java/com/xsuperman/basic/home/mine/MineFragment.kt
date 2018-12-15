@@ -1,4 +1,4 @@
-package com.xsuperman.basic.home
+package com.xsuperman.basic.home.mine
 
 
 import android.os.Bundle

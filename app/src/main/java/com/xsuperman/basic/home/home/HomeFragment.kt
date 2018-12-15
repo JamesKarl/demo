@@ -1,4 +1,4 @@
-package com.xsuperman.basic.home
+package com.xsuperman.basic.home.home
 
 import android.content.Context
 import android.os.Bundle

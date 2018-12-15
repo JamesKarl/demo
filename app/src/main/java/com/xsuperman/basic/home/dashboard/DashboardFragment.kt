@@ -1,4 +1,4 @@
-package com.xsuperman.basic.home
+package com.xsuperman.basic.home.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater

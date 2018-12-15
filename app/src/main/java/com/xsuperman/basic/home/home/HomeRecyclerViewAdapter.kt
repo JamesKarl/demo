@@ -1,4 +1,4 @@
-package com.xsuperman.basic.home
+package com.xsuperman.basic.home.home
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.TextView
 import com.xsuperman.basic.R
 
 
-import com.xsuperman.basic.home.HomeFragment.OnListFragmentInteractionListener
+import com.xsuperman.basic.home.home.HomeFragment.OnListFragmentInteractionListener
 import com.xsuperman.basic.home.dummy.DummyContent.DummyItem
 
 import kotlinx.android.synthetic.main.home_fragment_home.view.*
