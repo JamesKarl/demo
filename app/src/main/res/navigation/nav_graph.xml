@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/home">
+
+    <fragment android:id="@+id/settings" android:name="com.xsuperman.basic.SettingsFragment"
+              android:label="fragment_settings" tools:layout="@layout/fragment_settings"/>
+    <navigation android:id="@+id/home" app:startDestination="@id/navigation_home">
+        <fragment android:id="@+id/navigation_home" android:name="com.xsuperman.basic.home.home.HomeFragment"
+                  android:label="home_fragment_home_list" tools:layout="@layout/home_fragment_home_list"/>
+        <fragment android:id="@+id/navigation_dashboard"
+                  android:name="com.xsuperman.basic.home.dashboard.DashboardFragment"
+                  android:label="home_dashboard_fragment" tools:layout="@layout/home_dashboard_fragment"/>
+        <fragment android:id="@+id/navigation_work" android:name="com.xsuperman.basic.home.work.WorkFragment"
+                  android:label="WorkFragment"/>
+        <fragment android:id="@+id/navigation_mine" android:name="com.xsuperman.basic.home.mine.MineFragment"
+                  android:label="mine_fragment_mine" tools:layout="@layout/mine_fragment_mine">
+        </fragment>
+    </navigation>
+</navigation>

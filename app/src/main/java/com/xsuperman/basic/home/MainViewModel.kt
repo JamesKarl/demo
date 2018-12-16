@@ -17,7 +17,7 @@ class MainViewModel : ViewModel() {
             )
         },
         PageContent(R.id.navigation_dashboard) { DashboardFragment.newInstance() },
-        PageContent(R.id.navigation_notifications) { WorkFragment.newInstance("a", "b") },
+        PageContent(R.id.navigation_work) { WorkFragment.newInstance("a", "b") },
         PageContent(R.id.navigation_mine) { MineFragment.newInstance("a", "b") }
     )
 }
