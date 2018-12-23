@@ -8,16 +8,4 @@ import com.xsuperman.basic.home.home.PageContent
 import com.xsuperman.basic.home.mine.MineFragment
 import com.xsuperman.basic.home.work.WorkFragment
 
-class MainViewModel : ViewModel() {
-
-    val pageContents = listOf(
-        PageContent(R.id.navigation_home) {
-            HomeFragment.newInstance(
-                1
-            )
-        },
-        PageContent(R.id.navigation_dashboard) { DashboardFragment.newInstance() },
-        PageContent(R.id.navigation_work) { WorkFragment.newInstance("a", "b") },
-        PageContent(R.id.navigation_mine) { MineFragment.newInstance("a", "b") }
-    )
-}
+class MainViewModel : ViewModel()
