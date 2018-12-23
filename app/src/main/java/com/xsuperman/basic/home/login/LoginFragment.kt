@@ -6,8 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 
 import com.xsuperman.basic.R
+import com.xsuperman.basic.databinding.LoginFragmentBinding
+import kotlinx.android.synthetic.main.login_fragment.*
+import org.jetbrains.anko.support.v4.toast
+import timber.log.Timber
 
 class LoginFragment : Fragment() {
 
@@ -24,10 +30,17 @@ class LoginFragment : Fragment() {
         return inflater.inflate(R.layout.login_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
+        val binding = DataBindingUtil.bind<LoginFragmentBinding>(view)
+        val user = User("James", "1234")
+        binding?.user = user
+
+        button.setOnClickListener {
+            Timber.d(user.toString())
+            toast("you clicked me. $user")
+        }
+    }
 }
