@@ -1,3 +1,11 @@
 package com.xsuperman.basic.home.login
 
-data class User(var username: String, var password: String)
+import androidx.databinding.BaseObservable
+import androidx.databinding.Bindable
+
+data class User(
+    @get:Bindable
+    var username: String,
+    @get:Bindable
+    var password: String
+) : BaseObservable()
