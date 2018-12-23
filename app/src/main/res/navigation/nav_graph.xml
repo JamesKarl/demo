@@ -17,7 +17,7 @@
         <fragment android:id="@+id/navigation_mine" android:name="com.xsuperman.basic.home.mine.MineFragment"
                   android:label="mine_fragment_mine" tools:layout="@layout/mine_fragment_mine">
         </fragment>
+        <fragment android:id="@+id/navigation_login" android:name="com.xsuperman.basic.home.login.LoginFragment"
+                  android:label="LoginFragment"/>
     </navigation>
-    <fragment android:id="@+id/loginFragment" android:name="com.xsuperman.basic.home.login.LoginFragment"
-              android:label="LoginFragment"/>
 </navigation>
