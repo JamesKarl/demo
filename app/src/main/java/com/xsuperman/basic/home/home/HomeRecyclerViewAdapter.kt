@@ -1,38 +1,18 @@
 package com.xsuperman.basic.home.home
 
-import androidx.recyclerview.widget.RecyclerView
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.xsuperman.basic.R
-
-
-import com.xsuperman.basic.home.home.HomeFragment.OnListFragmentInteractionListener
 import com.xsuperman.basic.home.dummy.DummyContent.DummyItem
-
 import kotlinx.android.synthetic.main.home_fragment_home.view.*
 
-/**
- * [RecyclerView.Adapter] that can display a [DummyItem] and makes a call to the
- * specified [OnListFragmentInteractionListener].
- * TODO: Replace the implementation with code for your data type.
- */
 class HomeRecyclerViewAdapter(
-    private val mValues: List<DummyItem>,
-    private val mListener: OnListFragmentInteractionListener?
+    private val mValues: List<DummyItem>
 ) : RecyclerView.Adapter<HomeRecyclerViewAdapter.ViewHolder>() {
-
-    private val mOnClickListener: View.OnClickListener
-
-    init {
-        mOnClickListener = View.OnClickListener { v ->
-            val item = v.tag as DummyItem
-            // Notify the active callbacks interface (the activity, if the fragment is attached to
-            // one) that an item has been selected.
-            mListener?.onListFragmentInteraction(item)
-        }
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -44,11 +24,6 @@ class HomeRecyclerViewAdapter(
         val item = mValues[position]
         holder.mIdView.text = item.id
         holder.mContentView.text = item.content
-
-        with(holder.mView) {
-            tag = item
-            setOnClickListener(mOnClickListener)
-        }
     }
 
     override fun getItemCount(): Int = mValues.size
