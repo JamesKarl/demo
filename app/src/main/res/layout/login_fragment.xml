@@ -5,6 +5,7 @@
 
     <data>
         <variable name="user" type="com.xsuperman.basic.home.login.User"/>
+        <variable name="presenter" type="com.xsuperman.basic.home.login.LoginPresenter"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,10 +49,14 @@
                 android:text="Login"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/button" android:layout_marginStart="8dp"
-                app:layout_constraintStart_toStartOf="@+id/guideline" android:layout_marginTop="32dp"
+                android:id="@+id/button"
+                android:layout_marginStart="8dp"
+                android:onClick="@{() -> presenter.login(user)}"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                android:layout_marginTop="32dp"
                 app:layout_constraintTop_toBottomOf="@+id/editText2"
-                app:layout_constraintEnd_toStartOf="@+id/guideline3" android:layout_marginEnd="8dp"/>
+                app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                android:layout_marginEnd="8dp"/>
         <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content" android:id="@+id/guideline3"
                                                     app:layout_constraintGuide_begin="324dp"

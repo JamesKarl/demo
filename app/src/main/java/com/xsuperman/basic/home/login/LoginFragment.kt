@@ -35,12 +35,12 @@ class LoginFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
 
         val binding = DataBindingUtil.bind<LoginFragmentBinding>(view)
-        val user = User("James", "1234")
-        binding?.user = user
+
+        binding?.user = viewModel.user
 
         button.setOnClickListener {
-            Timber.d(user.toString())
-            toast("you clicked me. $user")
+            Timber.d(viewModel.user.toString())
+            toast("you clicked me. ${viewModel.user}")
         }
     }
 }
