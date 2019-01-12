@@ -11,11 +11,11 @@ private lateinit var boxStoreOfCurrentAccount: BoxStore
 val appAccountStore: Box<AppAccount> by lazy { boxStoreOfCurrentAccount.boxFor<AppAccount>(AppAccount::class.java) }
 
 fun initObjectBox(application: Application) {
-    boxStore = MyObjectBox.builder()
+    /*boxStore = MyObjectBox.builder()
         .androidContext(application)
         .androidContext(application).build()
 
     boxStoreOfCurrentAccount = MyObjectBox.builder()
         .name("1232")
-        .baseDirectory(application.filesDir).build()
+        .baseDirectory(application.filesDir).build()*/
 }
