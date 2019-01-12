@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.xsuperman.basic.R
+import kotlinx.android.synthetic.main.mine_fragment_mine.*
 
 class MineFragment : Fragment() {
 
