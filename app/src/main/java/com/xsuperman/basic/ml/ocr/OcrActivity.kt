@@ -49,6 +49,10 @@ class OcrActivity : AppCompatActivity() {
                 this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS
             )
         }
+
+        fab.setOnClickListener {
+            ocrFragment.capture()
+        }
     }
 
 
