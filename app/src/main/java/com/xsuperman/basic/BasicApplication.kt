@@ -2,6 +2,7 @@ package com.xsuperman.basic
 
 import android.app.Application
 import android.content.Context
+import com.google.firebase.FirebaseApp
 import com.xsuperman.basic.db.objectbox.initObjectBox
 import timber.log.Timber
 
@@ -20,6 +21,7 @@ class BasicApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        FirebaseApp.initializeApp(this)
         Timber.plant(Timber.DebugTree())
         initObjectBox(this)
     }

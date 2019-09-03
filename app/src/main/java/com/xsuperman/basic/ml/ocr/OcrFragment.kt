@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.camera.core.*
 import androidx.fragment.app.Fragment
+import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata
 import com.xsuperman.basic.R
@@ -63,11 +64,18 @@ class OcrFragment : Fragment() {
         override fun analyze(imageProxy: ImageProxy?, degrees: Int) {
             val mediaImage = imageProxy?.image
             val imageRotation = degreesToFirebaseRotation(degrees)
+            Log.d("XXXX", "analyze imageRotation = $imageProxy")
             if (mediaImage != null) {
                 val image = FirebaseVisionImage.fromMediaImage(mediaImage, imageRotation)
-                print("xxxx $image")
-                // Pass image to an ML Kit Vision API
-                // ...
+                Log.d("XXXXX", "xxxx image = $image")
+                val detector = FirebaseVision.getInstance().onDeviceTextRecognizer
+                detector.processImage(image).addOnSuccessListener {
+                    Log.e("XXXXXX", it.text)
+                }.addOnCanceledListener {
+
+                }.addOnFailureListener {
+                    it.printStackTrace()
+                }
             }
         }
     }
