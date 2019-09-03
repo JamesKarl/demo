@@ -21,7 +21,13 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_ocr" />
+    <fragment
+            android:id="@+id/ocrContent"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:name="com.xsuperman.basic.ml.ocr.OcrFragment"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:layout="@layout/content_ocr" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
