@@ -2,6 +2,8 @@ package com.xsuperman.basic.ml.ocr
 
 import android.graphics.Matrix
 import android.os.Bundle
+import android.os.Handler
+import android.os.HandlerThread
 import android.util.Log
 import android.util.Rational
 import android.util.Size
@@ -63,6 +65,7 @@ class OcrFragment : Fragment() {
             val imageRotation = degreesToFirebaseRotation(degrees)
             if (mediaImage != null) {
                 val image = FirebaseVisionImage.fromMediaImage(mediaImage, imageRotation)
+                print("xxxx $image")
                 // Pass image to an ML Kit Vision API
                 // ...
             }
@@ -91,11 +94,30 @@ class OcrFragment : Fragment() {
             updateTransform()
         }
 
+        // Setup image analysis pipeline that computes average pixel luminance
+        val analyzerConfig = ImageAnalysisConfig.Builder().apply {
+            // Use a worker thread for image analysis to prevent glitches
+            val analyzerThread = HandlerThread(
+                "LuminosityAnalysis"
+            ).apply { start() }
+            setCallbackHandler(Handler(analyzerThread.looper))
+            // In our analysis, we care more about the latest image than
+            // analyzing *every* image
+            setImageReaderMode(
+                ImageAnalysis.ImageReaderMode.ACQUIRE_LATEST_IMAGE
+            )
+        }.build()
+
+        // Build the image analysis use case and instantiate our analyzer
+        val analyzerUseCase = ImageAnalysis(analyzerConfig).apply {
+            analyzer = YourImageAnalyzer()
+        }
+
         // Bind use cases to lifecycle
         // If Android Studio complains about "this" being not a LifecycleOwner
         // try rebuilding the project or updating the appcompat dependency to
         // version 1.1.0 or higher.
-        CameraX.bindToLifecycle(this, preview, imageCapture)
+        CameraX.bindToLifecycle(this, preview, imageCapture, analyzerUseCase)
     }
 
     private fun updateTransform() {
